@@ -1,0 +1,333 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Home Page
+        </title>
+        <link href="{% static 'css/Home.css' %}" rel="stylesheet" type="text/css">
+       <!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+            <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet">
+                <script src="https://unpkg.com/scrollreveal">
+                </script>
+                <script src="{% static 'js/main.js' %}">
+                </script>
+            </link>
+        </link>
+    </head>
+    <body>
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a class="nav__logo" href="#">
+                        A Path Efter
+                    </a>
+                </div>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link active" href="#home">
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#about">
+                                About
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#skills">
+                                Selections
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#work">
+                                Choices
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#contact">
+                                Contact
+                            </a>
+                        </li>
+                        {% if not user.is_authenticated %}
+                        <li class="nav__item">
+                            <a class="nav__link" href="/guidesSignup/">
+                                Guide-SignUp
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/signup/">
+                                SignUp
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/login/">
+                                Login
+                            </a>
+                        </li>
+                        {% else %}
+                        <li class="nav__item">
+                            <a class="nav__link" href="/pie/">
+                                Pie Charts
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/flowcharts/">
+                                Flowcharts
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/logout/">
+                                Logout
+                            </a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="bx bx-menu">
+                    </i>
+                </div>
+            </nav>
+        </header>
+        <main class="l-main">
+            <!--===== HOME =====-->
+            <section class="home bd-grid" id="home">
+                <div class="home__data">
+                    <h1 class="home__title">
+                        Hey!
+                        <span class="home__title-color">
+                            {% if user.is_authenticated %}
+                            {{ user.first_name }}
+                            {% else %}
+                            {{ "STUDENT" }}
+                            {% endif %}
+                        </span>
+                        <br>
+                            Welcome To
+                            <br>
+                                A Path Efter
+                            </br>
+                            <h2>
+                                Let Us Make You See Your Path !!
+                            </h2>
+                        </br>
+                    </h1>
+                </div>
+                <div class="home__social">
+                    <a class="home__social-icon" href="">
+                        <i class="bx bxl-linkedin">
+                        </i>
+                    </a>
+                    <a class="home__social-icon" href="">
+                        <i class="bx bxl-behance">
+                        </i>
+                    </a>
+                    <a class="home__social-icon" href="">
+                        <i class="bx bxl-github">
+                        </i>
+                    </a>
+                </div>
+                <div class="home__img">
+                    <img alt="" src="/static/images/perfil.jpg ">
+                    </img>
+                </div>
+            </section>
+            <!--===== ABOUT =====-->
+            <section class="about section " id="about">
+                <h2 class="section-title">
+                    About
+                </h2>
+                <div class="about__container bd-grid">
+                    <div class="about__img">
+                        <img alt="" src="/static/images/about.jpg">
+                        </img>
+                    </div>
+                    <div>
+                        <p class="about__text">
+                            10th board is the major turning point in the life of a student. Career of a student starts taking it's shape from here. It puts a important question in front of the student of choosing the correct path from this point. That's where majority of the students make mistakes. In this competitive world, students make their decisions of choosing their career on the basis of their marks. And due to lack of guidance, a child is never introduced to its field of interest, as they are not aware of what the field is? And thus jumps into such
+                            <b>
+                                A PATH
+                            </b>
+                            of which a student has no idea. Thus we are here to give you the knowledge of the career paths to choose further in your life.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <!--===== SKILLS =====-->
+            <section class="skills section" id="skills">
+                <h2 class="section-title">
+                    Selections
+                </h2>
+                <div class="skills__container bd-grid">
+                    <div>
+                        <h2 class="skills__subtitle">
+                            Studets Selection In India
+                        </h2>
+                        <p class="skills__text">
+                            Student Selection in any field is very important as based on their seletion the future of that student will be predicted.
+                        </p>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class="bx bxl-html5 skills__icon">
+                                </i>
+                                <span class="skills__name">
+                                    SCIENCE
+                                </span>
+                            </div>
+                            <div class="skills__bar skills__html">
+                            </div>
+                            <div>
+                                <span class="skills__percentage">
+                                    47.13 Lakh
+                                </span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class="bx bxl-css3 skills__icon">
+                                </i>
+                                <span class="skills__name">
+                                    COMMERCE
+                                </span>
+                            </div>
+                            <div class="skills__bar skills__css">
+                            </div>
+                            <div>
+                                <span class="skills__percentage">
+                                    40.3 Lakh
+                                </span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class="bx bxl-javascript skills__icon">
+                                </i>
+                                <span class="skills__name">
+                                    ARTS
+                                </span>
+                            </div>
+                            <div class="skills__bar skills__js">
+                            </div>
+                            <div>
+                                <span class="skills__percentage">
+                                    93.49 Lakh
+                                </span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class="bx bxs-paint skills__icon">
+                                </i>
+                                <span class="skills__name">
+                                    HUMANITY
+                                </span>
+                            </div>
+                            <div class="skills__bar skills__ux">
+                            </div>
+                            <div>
+                                <span class="skills__percentage">
+                                    36,000
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img alt="" class="skills__img" src="/static/images/choice.jpg">
+                        </img>
+                    </div>
+                </div>
+            </section>
+            <!--===== CHOICES =====-->
+            <section class="work section" id="work">
+                <h2 class="section-title">
+                    Choices
+                </h2>
+                <div class="work__container bd-grid">
+                    <div class="work__img">
+                        <img alt="" src="/static/images/work1.jpg">
+                        </img>
+                    </div>
+                    <div class="work__img">
+                        <img alt="" src="/static/images/work2.jpg">
+                        </img>
+                    </div>
+                    <div class="work__img">
+                        <img alt="" src="/static/images/work3.jpg">
+                        </img>
+                    </div>
+                    <div class="work__img">
+                        <img alt="" src="/static/images/work4.jpg">
+                        </img>
+                    </div>
+                    <div class="work__img">
+                        <img alt="" src="/static/images/work5.jpg">
+                        </img>
+                    </div>
+                    <div class="work__img">
+                        <img alt="" src="/static/images/work6.jpg">
+                        </img>
+                    </div>
+                </div>
+            </section>
+            {% if  user.is_authenticated and user.isStudent %}
+            <!--===== Ask US =====-->
+            <section class="contact section" id="Ask">
+                <h2 class="section-title">
+                    Still Confused??
+                </h2>
+                <div class="contact__container bd-grid">
+                     <p class="skills__text">We are giving you the interaction with Guide, make you move...</p>
+                     <a class="contact__button2 button" href="/meets/">Ask Us</a>
+                </div>
+            </section>
+            {% endif%}
+            {% if  user.is_authenticated and not user.isStudent %}
+            <!--===== Ask US =====-->
+            <section class="contact section" id="Dash">
+                <h2 class="section-title">
+                    Dashboard
+                </h2>
+                <div class="contact__container bd-grid">
+                     <p class="skills__text">See All The Student Who requested For you...</p>
+                     <a class="contact__button2 button" href="/guideDashboard/">Go To</a>
+                </div>
+            </section>
+            {% endif%}
+            <!--===== CONTACT =====-->
+            <section class="contact section" id="contact">
+                <h2 class="section-title">
+                    Contact
+                </h2>
+                <div class="contact__container bd-grid">
+                    <form action="" class="contact__form">
+                        <input class="contact__input" placeholder="Name" type="text">
+                            <input class="contact__input" placeholder="Email" type="mail">
+                                <textarea class="contact__input" placeholder="Tell Us About..." cols="0" rows="10"></textarea>
+                                <input class="contact__button button" type="button" value="Send">
+                                </input>
+                            </input>
+                        </input>
+                    </form>
+                </div>
+            </section>
+        <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 item text">
+                        <h3>A Path Efter<br><br>Developed By: Rishi Shukla<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Urjit Mehta</h3>
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">A Path Efter © 2021</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+        </main>
+    </body>
+</html>

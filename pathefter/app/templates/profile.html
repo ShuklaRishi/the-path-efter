@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Form</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	
+</head>
+<body>
+	<header id="header">
+		<a href="#" class="logo">A Path Efter</a>
+		<ul>
+			<li><a href="#" >Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">See Paths</a></li>
+			<li><a href="/logout/">Logout</a></li>
+		</ul>
+	</header>
+	<section>
+        {{user.username}}
+	</section>
+</body>
+</html>

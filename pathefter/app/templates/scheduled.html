@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/scheduled.css'  %}">
+</head>
+<body>
+    <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a class="nav__logo" href="#">
+                        A Path Efter
+                    </a>
+                </div>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="/home">
+                                Home
+                            </a>
+                        </li>
+                        {% if not user.is_authenticated %}
+                        <li class="nav__item">
+                            <a class="nav__link" href="/guidesSignup/">
+                                Guide-SignUp
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/signup/">
+                                SignUp
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/login/">
+                                Login
+                            </a>
+                        </li>
+                        {% else %}
+                        <li class="nav__item">
+                            <a class="nav__link active" href="/pie/">
+                                Schedule Meet
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/pie/">
+                                Pie Charts
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/flowcharts/">
+                                Flowcharts
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/logout/">
+                                Logout
+                            </a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="bx bx-menu">
+                    </i>
+                </div>
+            </nav>
+        </header>
+<section class="sec">
+<div class="movie_card" id="bright">
+                <div class="info_section">
+                    <div class="movie_header">
+                        <h1>
+                            Your Meet is Requested To The Guide
+                        </h1>
+                    </div>
+                    <div class="movie_desc">
+                        <p class="text">
+                           Your Meet is requested to the guide and According to your given Email you will be interacting with the Guide soon and Guide will mail you for your requested topic.
+                        </p>
+                    </div>
+                    <div class="movie_social">
+                        <ul>
+                            <li>
+                                <!-- <u><a href="/scheduled/">Confirm</a></u> -->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="blur_back bright_back">
+                </div>
+            </div>
+</section>
+</body>
+</html>

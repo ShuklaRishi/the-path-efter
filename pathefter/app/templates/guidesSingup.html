@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Signup Page</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/Login.css' %}">
+</head>
+<body>
+	<div class="form">
+		<form class="login-form" action="" method="POST">
+			{% csrf_token %}
+			<h2>Signup</h2>
+			<div class="icon">
+				<a href="#"><i class="fab fa-facebook"></i></a>
+				<a href="#"><i class="fab fa-google"></i></a>
+				<a href="#"><i class="fab fa-twitter"></i></a>
+			</div>
+			<h2>{{ msg }}</h2>
+			<input type="text" name="username" value="" placeholder="Username" required="">
+			<input type="text" name="first_name" value="" placeholder="Firstname" required="">
+			<input type="text" name="last_name" value="" placeholder="Lastname" required="">
+			<input type="email" name="email" value="" placeholder="Email" required=""><br>
+			<select name="fields" class="select">
+	    		<option value="Science">Science</option>
+	    		<option value="Commerce">Commerce</option>
+	    		<option value="Arts">Arts</option>
+	    		<option value="Humanity">Humanity</option>
+  			</select><br>
+
+  			<br>
+			<select name="qualification" class="select">
+	    		<option value="NONE">NONE</option>
+	    		<option value="PhD">PhD</option>
+	    		<option value="B.Tech">B.Tech</option>
+	    		<option value="M.Tech">M.Tech</option>
+	    		<option value="MBA">MBA</option>
+	    		<option value="B.Com">B.Com</option>
+	    		<option value="M.Com">M.Com</option>
+	    		<option value="BBA">BBA</option>
+	    		<option value="MBBS">MBBS</option>
+	    		<option value="MS">MS</option>
+	    		<option value="MD">MD</option>
+	    		<option value="LLB">LLB</option>
+  			</select><br>
+
+			<input type="text" name="dob" value="" placeholder="DD/MM/YYYY" onfocus = "(this.type = 'date')">
+			<input type="password" name="password1" value="" placeholder="Set password" required="">
+			<input type="password" name="password2" value="" placeholder="Confirm password" required=""><br/>
+			<button type="submit">Signup</button>
+			<p class="options">Already have an account ? <a href="/login/">Login</a></p>
+		</form>
+	</div>
+</body>
+</html>
